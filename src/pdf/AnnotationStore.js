@@ -24,6 +24,11 @@ export default class AnnotationStore {
   }
 
   getAnnotations(pageNumber) {
+    //in case of no parameter, get all annotations
+    if (arguments.length == 0) {
+      return [...this._annotations];
+    }
+    
     // Text annotations on this page
     const isOnPage = annotation => {
       if (annotation.target.selector) {
