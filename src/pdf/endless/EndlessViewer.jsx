@@ -29,7 +29,7 @@ const EndlessViewer = props => {
   }
 
   const saveAnnotationsToJson = () => {
-    const fileData = JSON.stringify(props.store.getAllAnnotations());
+    const fileData = JSON.stringify(props.store.getAnnotations());
     const blob = new Blob([fileData], { type: "application/json" });   
     saveAs(blob, props.url + '-annotations.json'); 
   }
